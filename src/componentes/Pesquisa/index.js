@@ -44,29 +44,30 @@ const Resultado = styled.div`
 
 
 function Pesquisa() {
-    const [livrosPesquisados, setLivrosPesquisados] = useState([])
-
+    const [livrosPesquisados, setLivrosPesquisados] = useState([]);
+  
     return (
-        <PesquisaContainer>
-            <Titulo>Já sabe por onde começar?</Titulo>
-            <Subtitulo>Encontre seu Livro em nossa estante.</Subtitulo>
-            <Input
-                placeholder="Escreva sua proxima Leitura"
-                onBlur={evento => {
-                    const textoDigitado = evento.target.value
-                    const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado))
-                    setLivrosPesquisados(resultadoPesquisa)
-                }}
-            />
-            {livrosPesquisados.map(livro => (
-                <Resultado>
-                    <p>{livro.nome}</p>
-                    <img src={livro.src} />
-                </Resultado>
-
-            ))}
-        </PesquisaContainer>
-    )
-}
+      <PesquisaContainer>
+        <Titulo>Já sabe por onde começar?</Titulo>
+        <Subtitulo>Encontre seu Livro em nossa estante.</Subtitulo>
+        <Input
+          placeholder="Escreva sua próxima Leitura"
+          onBlur={(evento) => {
+            const textoDigitado = evento.target.value;
+            const resultadoPesquisa = livros.filter((livro) =>
+              livro.nome.includes(textoDigitado)
+            );
+            setLivrosPesquisados(resultadoPesquisa);
+          }}
+        />
+        {livrosPesquisados.map((livro) => (
+          <Resultado key={livro.id}> {/* Adiciona a prop `key` com o ID do livro */}
+            <p>{livro.nome}</p>
+            <img src={livro.src} alt='Capa do Livro'/>
+          </Resultado>
+        ))}
+      </PesquisaContainer>
+    );
+  }
 
 export default Pesquisa
