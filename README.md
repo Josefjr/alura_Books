@@ -1,4 +1,4 @@
-Claro, aqui está o README atualizado com sua assinatura e o link para o seu LinkedIn:
+### Projeto AluraBook
 
 ```markdown
 # Card de Recomendação
