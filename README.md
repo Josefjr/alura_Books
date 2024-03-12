@@ -1,4 +1,17 @@
-### Projeto AluraBook
+# AluraBook
+```markdown
+
+Este repositório contém o projeto final do curso de React, onde foram abordados os seguintes tópicos:
+
+## Objetivos do Curso
+
+- Compreender os conhecimentos básicos teóricos e práticos de React.
+- Aplicar a manutenção numa aplicação React.
+- Criar um website próprio usando React.
+- Colocar em prática as ferramentas mais utilizadas pelo mercado de trabalho front-end.
+
+
+O projeto final do curso consiste em um website completo construído com React, aplicando todos os conhecimentos adquiridos ao longo das aulas. Este projeto demonstra a minha capacidade como aluno em criar aplicações web modernas e interativas utilizando React.
 
 ```markdown
 # Card de Recomendação
