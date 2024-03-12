@@ -1,4 +1,6 @@
 import { livros } from './dadosUltimosLacamentos';
+import CardRecomenda from '../CardRecomenda';
+import imagemLivro from '../../imagens/Livors/livro2.jpg'
 import styled from 'styled-components';
 
 const UltimosLancamentosContainer = styled.section`
@@ -9,13 +11,16 @@ const UltimosLancamentosContainer = styled.section`
 `
 
 const Titulo = styled.h2`
-    width: 100%;
-    padding: 30px 0;
-    color: #EB9B00;
-    font-size: 36px;
+    color: ${({ cor }) => cor || '#EB9B00'};
+    font-size: ${({ tamanhoFonte }) => tamanhoFonte || '36px'};
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
+`
+
+const NovoLivro = styled.img`
+    width: 200px;
+    margin: 0 10px 20px 10px; /* Adiciona espaçamento em torno de cada imagem */
 `
 
 const NovosLivrosContainer = styled.div`
@@ -24,28 +29,26 @@ const NovosLivrosContainer = styled.div`
     align-items: center;
     margin-bottom: 20px;
     cursor: pointer;
-    p {
-        width: 200px;
-    }
-    img {
-        width: 200px;
-        margin-right: 50px; /* Adiciona espaçamento à direita de cada imagem */
-    }
-    &:hover {
-        border: 1px solid white;
-}
 `
-
 
 function UltimosLacamentos() {
     return (
         <UltimosLancamentosContainer>
-            <Titulo>ÚLTIMOS LANÇAMENTOS</Titulo>
+            <Titulo 
+                as="h2"
+                >ÚLTIMOS LANÇAMENTOS
+            </Titulo>
             <NovosLivrosContainer>
-                {livros.map((livro, index) => (
-                    <img key={livro.id || index} alt='Capa dos Últimos Lançamentos' src={livro.src} />
+                {livros.map(livro => (
+                    <NovoLivro key={livro.id} alt='Capa dos Últimos Lançamentos' src={livro.src} />
                 ))}
             </NovosLivrosContainer>
+            <CardRecomenda
+                titulo="Talvez você se interesse por... "
+                subtitulo="ChatGPT"
+                descricao="Construindo uma aplicação com a plataforma Google"
+                img={imagemLivro}
+            />
         </UltimosLancamentosContainer>
     )
 };

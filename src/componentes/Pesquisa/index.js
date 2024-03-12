@@ -10,6 +10,8 @@ const PesquisaContainer = styled.section`
     padding: 85px 0;
     height: 270px;
     width: 100%;
+    position: relative; /* Adiciona posição relativa */
+    z-index: 1; /* Define uma ordem de empilhamento acima do conteúdo abaixo */
 `
 
 const Titulo = styled.h2`
@@ -42,7 +44,6 @@ const Resultado = styled.div`
     }
 `
 
-
 function Pesquisa() {
     const [livrosPesquisados, setLivrosPesquisados] = useState([]);
   
@@ -68,6 +69,6 @@ function Pesquisa() {
         ))}
       </PesquisaContainer>
     );
-  }
+}
 
 export default Pesquisa
