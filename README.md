@@ -1,5 +1,4 @@
 # AluraBook
-```markdown
 
 Este repositório contém o projeto final do curso de React, onde foram abordados os seguintes tópicos:
 
